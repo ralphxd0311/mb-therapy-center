@@ -27,7 +27,7 @@
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    body { font-family: 'Nunito', sans-serif; color: #1a2e17; background: #fff; }
+    body { font-family: 'Nunito', sans-serif; color: #1a2e17; background: #fff; overflow-x: hidden; }
     h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
     .hero-grad { background: linear-gradient(140deg, #133d11 0%, #1E6B1C 30%, #2A9228 60%, #3DB832 100%); }
     .grain::after { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); pointer-events:none; }
@@ -115,7 +115,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero-grad grain relative min-h-screen flex items-center pt-14 lg:pt-20 overflow-hidden">
+<section class="hero-grad grain relative min-h-screen flex items-center pt-20 lg:pt-24 overflow-hidden">
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-lime/10 blur-3xl"></div>
     <div class="absolute bottom-0 -left-40 w-96 h-96 rounded-full bg-black/20 blur-3xl"></div>
@@ -146,15 +146,15 @@
         <div class="anim ad4 grid grid-cols-3 gap-3 mt-12">
           <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
             <p class="text-2xl font-heading font-bold text-white">5+</p>
-            <p class="text-[10px] sm:text-xs text-white/70 mt-1 font-body leading-tight">Services Offered</p>
+            <p class="text-xs text-white/70 mt-1 font-body leading-tight">Services Offered</p>
           </div>
           <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
             <p class="text-2xl font-heading font-bold text-white">500+</p>
-            <p class="text-[10px] sm:text-xs text-white/70 mt-1 font-body leading-tight">Patients Served</p>
+            <p class="text-xs text-white/70 mt-1 font-body leading-tight">Patients Served</p>
           </div>
           <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
             <p class="text-2xl font-heading font-bold text-white">10+</p>
-            <p class="text-[10px] sm:text-xs text-white/70 mt-1 font-body leading-tight">Expert Therapists</p>
+            <p class="text-xs text-white/70 mt-1 font-body leading-tight">Expert Therapists</p>
           </div>
         </div>
       </div>

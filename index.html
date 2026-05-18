@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="M.B. Therapy Center — From Disabilities to Possibilities. Special Education, Occupational Therapy, Speech Therapy, Physical Therapy, and Tutorial Services in Taguig City, Philippines." />
+  <meta name="keywords" content="therapy center taguig, special education taguig, occupational therapy, speech therapy, physical therapy, MB Therapy Center" />
+  <title>M.B. Therapy Center | From Disabilities to Possibilities</title>
+  <link rel="icon" type="image/png" href="brand_assets/mbtc_logo_enhanced.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary: '#3DB832', 'primary-dark': '#2A9228', 'primary-darker': '#1E6B1C',
+          lime: '#C5E000', 'lime-dark': '#9DB800',
+        },
+        fontFamily: {
+          heading: ['"Playfair Display"', 'Georgia', 'serif'],
+          body: ['Nunito', 'system-ui', 'sans-serif'],
+        },
+      }}
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1a2e17; background: #fff; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+    .hero-grad { background: linear-gradient(140deg, #133d11 0%, #1E6B1C 30%, #2A9228 60%, #3DB832 100%); }
+    .grain::after { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); pointer-events:none; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#C5E000; transition:width .25s cubic-bezier(.4,0,.2,1); }
+    .nav-link:hover::after, .nav-link.active::after { width:100%; }
+    .btn-lime { background:#C5E000; color:#1E6B1C; box-shadow:0 3px 16px rgba(197,224,0,.45); transition:transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease; }
+    .btn-lime:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(197,224,0,.55); }
+    .btn-lime:active { transform:translateY(0); }
+    .btn-green { background:linear-gradient(135deg,#3DB832,#2A9228); color:#fff; box-shadow:0 3px 16px rgba(61,184,50,.35); transition:transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease; }
+    .btn-green:hover { transform:translateY(-2px); box-shadow:0 6px 28px rgba(61,184,50,.45); }
+    .btn-green:active { transform:translateY(0); }
+    .btn-white { background:#fff; color:#1E6B1C; box-shadow:0 3px 16px rgba(0,0,0,.12); transition:transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease; }
+    .btn-white:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.18); }
+    .card-hover { transition:transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+    .card-hover:hover { transform:translateY(-6px); box-shadow:0 20px 48px rgba(61,184,50,.18); }
+    #mobile-menu { max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .25s ease; }
+    #mobile-menu.open { max-height:520px; opacity:1; }
+    /* Scroll reveal */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
+    .reveal.in { opacity:1; transform:translateY(0); }
+    .d1 { transition-delay:.08s } .d2 { transition-delay:.16s } .d3 { transition-delay:.24s }
+    .d4 { transition-delay:.32s } .d5 { transition-delay:.40s } .d6 { transition-delay:.48s }
+    /* Hero load animations */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    .anim { animation: fadeUp .7s cubic-bezier(.25,.46,.45,.94) both; opacity:0; }
+    .ad1 { animation-delay:.1s } .ad2 { animation-delay:.25s } .ad3 { animation-delay:.42s } .ad4 { animation-delay:.58s }
+    /* Service card inner */
+    .svc-card { border:1px solid #e8f0e5; }
+    .svc-card:hover .svc-arrow { transform:translateX(4px); }
+    .svc-arrow { transition:transform .2s ease; }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100" style="box-shadow:0 2px 24px rgba(0,0,0,.07);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-10 lg:h-12 w-auto" />
+        <div class="hidden sm:block">
+          <p class="font-heading font-bold text-sm lg:text-base leading-tight text-primary-darker">M.B. Therapy Center</p>
+          <p class="text-xs text-primary leading-tight">From Disabilities to Possibilities</p>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-7">
+        <a href="index.html" class="nav-link active text-sm font-semibold text-primary-darker">Home</a>
+        <a href="about.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">About</a>
+        <a href="services.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Services</a>
+        <a href="team.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Our Team</a>
+        <a href="testimonials.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Testimonials</a>
+        <a href="faqs.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">FAQs</a>
+        <a href="contact.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="book.html" class="btn-lime hidden sm:inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Book Appointment
+        </a>
+        <a href="https://www.facebook.com/MBTherapyCenter" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="hidden lg:flex w-9 h-9 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-600 transition-colors items-center justify-center">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <button id="menu-toggle" aria-label="Toggle menu" class="lg:hidden p-2 flex flex-col gap-1.5">
+          <span class="w-5 h-0.5 bg-primary-darker rounded-full"></span>
+          <span class="w-5 h-0.5 bg-primary-darker rounded-full"></span>
+          <span class="w-5 h-0.5 bg-primary-darker rounded-full"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden border-t border-slate-100 py-3 space-y-1">
+      <a href="index.html" class="block px-3 py-2.5 text-sm font-semibold text-primary-darker rounded-lg bg-primary/5">Home</a>
+      <a href="about.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">About</a>
+      <a href="services.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Services</a>
+      <a href="team.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Our Team</a>
+      <a href="testimonials.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Testimonials</a>
+      <a href="faqs.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">FAQs</a>
+      <a href="contact.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Contact</a>
+      <div class="pt-2 pb-1 px-3"><a href="book.html" class="btn-lime block text-center text-sm font-bold px-5 py-3 rounded-full">Book Appointment</a></div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-grad grain relative min-h-screen flex items-center pt-16 lg:pt-20 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-lime/10 blur-3xl"></div>
+    <div class="absolute bottom-0 -left-40 w-96 h-96 rounded-full bg-black/20 blur-3xl"></div>
+    <div class="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-primary/20 blur-2xl"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <div class="anim ad1 inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+          <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
+          Now Accepting New Patients · Taguig City
+        </div>
+        <h1 class="anim ad2 text-4xl sm:text-5xl lg:text-[3.75rem] font-heading font-bold text-white leading-[1.1] mb-6" style="letter-spacing:-0.03em;">
+          From <span class="text-lime" style="text-shadow:0 0 40px rgba(197,224,0,.35);">Disabilities</span><br>to <span class="text-white">Possibilities.</span>
+        </h1>
+        <p class="anim ad3 text-white/85 text-lg leading-relaxed mb-8 max-w-lg">
+          M.B. Therapy Center provides compassionate, evidence-based therapy and special education services — helping every individual reach their fullest potential.
+        </p>
+        <div class="anim ad4 flex flex-wrap gap-4">
+          <a href="book.html" class="btn-lime inline-flex items-center gap-2 font-bold px-7 py-3.5 rounded-full text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Book an Appointment
+          </a>
+          <a href="services.html" class="btn-white inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-full text-sm">
+            Our Services <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="anim ad4 grid grid-cols-3 gap-3 mt-12">
+          <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
+            <p class="text-2xl font-heading font-bold text-white">5+</p>
+            <p class="text-xs text-white/70 mt-1 font-body">Services Offered</p>
+          </div>
+          <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
+            <p class="text-2xl font-heading font-bold text-white">500+</p>
+            <p class="text-xs text-white/70 mt-1 font-body">Patients Served</p>
+          </div>
+          <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
+            <p class="text-2xl font-heading font-bold text-white">10+</p>
+            <p class="text-xs text-white/70 mt-1 font-body">Expert Therapists</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative hidden lg:block">
+        <div class="w-full max-w-md mx-auto relative">
+          <div class="aspect-square rounded-3xl overflow-hidden" style="box-shadow:0 32px 80px rgba(0,0,0,.4);">
+            <img src="https://images.unsplash.com/photo-1708687045030-26702e62fc65?w=480&h=480&q=80&fit=crop&auto=format" alt="Therapy session at MB Therapy Center" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-darker/70 via-primary-darker/10 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5">
+              <p class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-1">Our Commitment</p>
+              <p class="text-white font-heading font-bold text-xl leading-tight">Every child deserves to thrive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 pointer-events-none">
+    <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 70L1440 70L1440 24C1200 58 960 70 720 58C480 46 240 12 0 24L0 70Z" fill="#fff"/></svg>
+  </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section class="py-20 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+      <!-- Image -->
+      <div class="relative reveal order-last lg:order-first">
+        <div class="rounded-3xl overflow-hidden" style="box-shadow:0 24px 64px rgba(61,184,50,.18);">
+          <img src="https://images.unsplash.com/photo-1708686816818-2b018e0c1296?w=600&h=480&q=80&fit=crop&auto=format" alt="M.B. Therapy Center" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-darker/75 via-primary-darker/15 to-transparent"></div>
+        </div>
+        <div class="absolute bottom-7 left-7 right-7">
+          <p class="text-white/70 text-xs font-semibold uppercase tracking-widest mb-1">Established in Taguig City</p>
+          <p class="text-white font-heading font-bold text-3xl">10+ Years<br><span class="text-lime">of Care & Healing</span></p>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="reveal d1">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-0.5 bg-primary"></div>
+          <span class="text-primary text-xs font-bold uppercase tracking-widest">About Us</span>
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-heading font-bold text-primary-darker mb-5" style="letter-spacing:-.02em; line-height:1.15;">A Place Where Every Journey Matters</h2>
+        <p class="text-slate-600 mb-4 leading-relaxed">M.B. Therapy Center is a multi-disciplinary therapy and special education center in Taguig City dedicated to providing individualized, compassionate care to children and individuals with special needs.</p>
+        <p class="text-slate-600 mb-8 leading-relaxed">Our licensed therapists and special educators collaborate to create personalized plans that help each person discover and reach their full potential.</p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex-shrink-0 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div><p class="font-bold text-primary-darker text-sm">Licensed Professionals</p><p class="text-xs text-slate-500 mt-0.5">All therapists fully licensed</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex-shrink-0 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <div><p class="font-bold text-primary-darker text-sm">Individual Attention</p><p class="text-xs text-slate-500 mt-0.5">1-on-1 personalized sessions</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex-shrink-0 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div><p class="font-bold text-primary-darker text-sm">Complete Center</p><p class="text-xs text-slate-500 mt-0.5">All therapies under one roof</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex-shrink-0 flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <div><p class="font-bold text-primary-darker text-sm">Family-Centered Care</p><p class="text-xs text-slate-500 mt-0.5">Families involved in treatment</p></div>
+          </div>
+        </div>
+        <a href="about.html" class="btn-green inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full text-sm">
+          Learn More About Us <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-20 lg:py-32 relative overflow-hidden" style="background:#F4F7F2;">
+  <div class="absolute top-0 left-0 right-0 pointer-events-none">
+    <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 0L1440 0L1440 35C1200 10 960 0 720 12C480 24 240 45 0 35L0 0Z" fill="#fff"/></svg>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="inline-flex items-center gap-3 mb-5">
+        <div class="w-8 h-0.5 bg-primary"></div>
+        <span class="text-primary text-xs font-bold uppercase tracking-widest">Our Services</span>
+        <div class="w-8 h-0.5 bg-primary"></div>
+      </div>
+      <h2 class="text-3xl lg:text-4xl font-heading font-bold text-primary-darker mb-4" style="letter-spacing:-.02em;">Comprehensive Therapy & Education</h2>
+      <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">A full range of therapy and special education services tailored to meet the unique needs of each individual.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- SpED -->
+      <a href="services.html#sped" class="group card-hover svc-card bg-white rounded-2xl overflow-hidden block reveal d1">
+        <div class="px-6 py-5 flex items-center gap-4" style="background:linear-gradient(135deg,#1E6B1C,#2A9228);">
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-white text-base">Special Education (SpED)</h3>
+        </div>
+        <div class="p-6">
+          <p class="text-slate-600 text-sm leading-relaxed">Individual and group sessions developing academic, social, and life skills for children with special needs.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-primary text-sm font-bold">Explore program <svg class="svc-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <!-- OT -->
+      <a href="services.html#ot" class="group card-hover svc-card bg-white rounded-2xl overflow-hidden block reveal d2">
+        <div class="px-6 py-5 flex items-center gap-4" style="background:linear-gradient(135deg,#2A9228,#3DB832);">
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-white text-base">Occupational Therapy</h3>
+        </div>
+        <div class="p-6">
+          <p class="text-slate-600 text-sm leading-relaxed">Developing daily living skills, fine motor abilities, and sensory processing for greater independence.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-primary text-sm font-bold">Explore program <svg class="svc-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <!-- ST -->
+      <a href="services.html#st" class="group card-hover svc-card bg-white rounded-2xl overflow-hidden block reveal d3">
+        <div class="px-6 py-5 flex items-center gap-4" style="background:linear-gradient(135deg,#3DB832,#2A9228);">
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-white text-base">Speech Therapy</h3>
+        </div>
+        <div class="p-6">
+          <p class="text-slate-600 text-sm leading-relaxed">Improving communication, language, speech articulation, and swallowing abilities.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-primary text-sm font-bold">Explore program <svg class="svc-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <!-- PT -->
+      <a href="services.html#pt" class="group card-hover svc-card bg-white rounded-2xl overflow-hidden block reveal d4">
+        <div class="px-6 py-5 flex items-center gap-4" style="background:linear-gradient(135deg,#1E6B1C,#3DB832);">
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-white text-base">Physical Therapy</h3>
+        </div>
+        <div class="p-6">
+          <p class="text-slate-600 text-sm leading-relaxed">Restoring movement, strength, and physical function through targeted rehabilitation programs.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-primary text-sm font-bold">Explore program <svg class="svc-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <!-- Tutorial -->
+      <a href="services.html#tutorial" class="group card-hover svc-card bg-white rounded-2xl overflow-hidden block reveal d5">
+        <div class="px-6 py-5 flex items-center gap-4" style="background:linear-gradient(135deg,#2A9228,#3DB832);">
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-white text-base">Tutorial Services</h3>
+        </div>
+        <div class="p-6">
+          <p class="text-slate-600 text-sm leading-relaxed">Personalized academic support for students with learning differences and educational challenges.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-primary text-sm font-bold">Explore program <svg class="svc-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      <!-- Not sure -->
+      <div class="rounded-2xl overflow-hidden flex flex-col justify-between reveal d6" style="background:linear-gradient(140deg,#133d11,#1E6B1C);border:1px solid rgba(255,255,255,.08);">
+        <div class="p-6">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-white text-base mb-2">Not sure which service?</h3>
+          <p class="text-white/65 text-sm leading-relaxed">Contact us for a free consultation — we'll help you find the right program.</p>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="contact.html" class="btn-lime inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full w-full justify-center">
+            Get Free Consultation <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 pointer-events-none">
+    <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 50L1440 50L1440 15C1200 40 960 50 720 40C480 30 240 8 0 15L0 50Z" fill="#fff"/></svg>
+  </div>
+</section>
+
+<!-- TESTIMONIALS TEASER -->
+<section class="py-20 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 reveal">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-0.5 bg-primary"></div>
+          <span class="text-primary text-xs font-bold uppercase tracking-widest">Testimonials</span>
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-heading font-bold text-primary-darker" style="letter-spacing:-.02em;">What Families Are Saying</h2>
+      </div>
+      <a href="testimonials.html" class="btn-green flex-shrink-0 inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full">
+        Read All Stories <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <!-- Asymmetric layout: featured + 2 stacked -->
+    <div class="grid md:grid-cols-5 gap-5">
+      <!-- Featured large testimonial -->
+      <div class="md:col-span-3 rounded-3xl p-8 lg:p-10 relative overflow-hidden flex flex-col reveal" style="background:linear-gradient(140deg,#133d11,#1E6B1C);">
+        <div class="absolute -top-4 -left-4 font-heading text-white/6 leading-none select-none pointer-events-none" style="font-size:12rem;">"</div>
+        <div class="flex gap-0.5 mb-6 relative">
+          <svg class="w-5 h-5" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-white text-lg leading-relaxed mb-8 relative flex-grow">"M.B. Therapy Center changed our family's life. Before enrolling our son in the SpED program, we were overwhelmed and unsure of where to turn. The team welcomed us with open arms, took the time to understand our son, and developed a plan that finally worked for him. Today, he is thriving — communicating, learning, and smiling."</p>
+        <div class="flex items-center gap-4 mt-auto relative">
+          <img src="https://i.pravatar.cc/56?img=45" alt="Maria R." class="w-14 h-14 rounded-full object-cover" style="border:2px solid rgba(197,224,0,.4);" />
+          <div>
+            <p class="font-bold text-white">Maria R.</p>
+            <p class="text-white/55 text-sm">Parent of SpED student</p>
+          </div>
+        </div>
+      </div>
+      <!-- Two smaller testimonials -->
+      <div class="md:col-span-2 grid grid-rows-2 gap-5">
+        <div class="bg-white rounded-3xl p-6 border border-slate-100 reveal d1" style="box-shadow:0 4px 24px rgba(61,184,50,.07);">
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">"The speech therapy program has been life-changing for our daughter. She can now communicate so much better. Thank you!"</p>
+          <div class="flex items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=12" alt="Jose L." class="w-10 h-10 rounded-full object-cover" />
+            <div><p class="text-sm font-bold text-primary-darker">Jose L.</p><p class="text-xs text-slate-400">Parent of ST patient</p></div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-6 border border-slate-100 reveal d2" style="box-shadow:0 4px 24px rgba(61,184,50,.07);">
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4" fill="#C5E000" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">"Excellent OT program! Our child's fine motor skills have improved tremendously. The team's approach is holistic and compassionate."</p>
+          <div class="flex items-center gap-3">
+            <img src="https://i.pravatar.cc/40?img=25" alt="Ana C." class="w-10 h-10 rounded-full object-cover" />
+            <div><p class="text-sm font-bold text-primary-darker">Ana C.</p><p class="text-xs text-slate-400">Parent of OT patient</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-24 lg:py-32 hero-grad grain relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-lime/10 blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-black/20 blur-3xl"></div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <p class="reveal text-lime text-xs font-bold uppercase tracking-widest mb-4">Start Your Journey Today</p>
+    <h2 class="reveal d1 text-3xl lg:text-5xl font-heading font-bold text-white mb-6" style="letter-spacing:-.03em;">Ready to Start<br>the Journey?</h2>
+    <p class="reveal d2 text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">Take the first step toward a brighter future. Our team is ready to help you or your loved one unlock their fullest potential.</p>
+    <div class="reveal d3 flex flex-wrap justify-center gap-4">
+      <a href="book.html" class="btn-lime inline-flex items-center gap-2 font-bold px-8 py-4 rounded-full">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Book Appointment
+      </a>
+      <a href="tel:+6328511 7239" class="btn-white inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call Us Now
+      </a>
+    </div>
+    <div class="reveal d4 mt-8 flex flex-wrap justify-center gap-6 text-white/65 text-sm">
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-lime flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        54 Pres. Quirino St., Taguig City
+      </span>
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-lime flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Mon–Sat: 8:00 AM – 5:00 PM
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-primary-darker text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-12 w-auto brightness-110" />
+        </div>
+        <p class="text-white/65 text-sm mb-5 leading-relaxed">Dedicated to helping individuals with disabilities achieve their fullest potential through compassionate, evidence-based therapy.</p>
+        <a href="https://www.facebook.com/MBTherapyCenter" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors items-center justify-center">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div>
+        <h4 class="font-heading font-bold text-white mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-2.5">
+          <li><a href="index.html" class="text-white/65 hover:text-lime text-sm transition-colors">Home</a></li>
+          <li><a href="about.html" class="text-white/65 hover:text-lime text-sm transition-colors">About Us</a></li>
+          <li><a href="services.html" class="text-white/65 hover:text-lime text-sm transition-colors">Our Services</a></li>
+          <li><a href="team.html" class="text-white/65 hover:text-lime text-sm transition-colors">Our Team</a></li>
+          <li><a href="testimonials.html" class="text-white/65 hover:text-lime text-sm transition-colors">Testimonials</a></li>
+          <li><a href="faqs.html" class="text-white/65 hover:text-lime text-sm transition-colors">FAQs</a></li>
+          <li><a href="book.html" class="text-white/65 hover:text-lime text-sm transition-colors">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading font-bold text-white mb-5 text-sm uppercase tracking-wider">Our Services</h4>
+        <ul class="space-y-2.5">
+          <li><a href="services.html#sped" class="text-white/65 hover:text-lime text-sm transition-colors">Special Education</a></li>
+          <li><a href="services.html#ot" class="text-white/65 hover:text-lime text-sm transition-colors">Occupational Therapy</a></li>
+          <li><a href="services.html#st" class="text-white/65 hover:text-lime text-sm transition-colors">Speech Therapy</a></li>
+          <li><a href="services.html#pt" class="text-white/65 hover:text-lime text-sm transition-colors">Physical Therapy</a></li>
+          <li><a href="services.html#tutorial" class="text-white/65 hover:text-lime text-sm transition-colors">Tutorial Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading font-bold text-white mb-5 text-sm uppercase tracking-wider">Contact Us</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-white/65">
+            <svg class="w-4 h-4 text-lime mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>54 President Quirino St., Zone 6, South Signal Village, Taguig City</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-white/65">
+            <svg class="w-4 h-4 text-lime mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>(02) 8511-7239 / (02) 8697-6826<br>0933-720-2394 / 0917-653-2115</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-white/65">
+            <svg class="w-4 h-4 text-lime mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span>maridelbendicio@yahoo.com<br>bautista_madel@yahoo.com</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-white/65">
+            <svg class="w-4 h-4 text-lime mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Mon–Sat: 8:00 AM – 5:00 PM</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <p class="text-white/40 text-xs">© 2025 M.B. Therapy Center. All rights reserved.</p>
+      <p class="text-white/40 text-xs">54 President Quirino St., Taguig City, Philippines</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

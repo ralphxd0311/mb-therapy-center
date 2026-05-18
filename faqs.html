@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently asked questions about M.B. Therapy Center's services, scheduling, eligibility, and payments. Get the answers you need before booking." />
+  <title>FAQs | M.B. Therapy Center</title>
+  <link rel="icon" type="image/png" href="brand_assets/mbtc_logo_enhanced.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary:'#3DB832','primary-dark':'#2A9228','primary-darker':'#1E6B1C', lime:'#C5E000','lime-dark':'#9DB800','green-bg':'#F5FBF0' },
+        fontFamily: { heading:['"Playfair Display"','Georgia','serif'], body:['Nunito','system-ui','sans-serif'] }
+      }}
+    }
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{font-family:'Nunito',sans-serif;color:#1a2e17;background:#fff}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif}
+    .hero-grad{background:linear-gradient(140deg,#133d11 0%,#1E6B1C 30%,#2A9228 60%,#3DB832 100%)}
+    .nav-link{position:relative;transition:color .2s}
+    .nav-link::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:#C5E000;transition:width .25s cubic-bezier(.4,0,.2,1)}
+    .nav-link:hover::after,.nav-link.active::after{width:100%}
+    .btn-lime{background:#C5E000;color:#1E6B1C;box-shadow:0 3px 16px rgba(197,224,0,.45);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease}
+    .btn-lime:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(197,224,0,.55)}
+    .btn-lime:active{transform:translateY(0)}
+    .btn-green{background:linear-gradient(135deg,#3DB832,#2A9228);color:#fff;box-shadow:0 4px 20px rgba(61,184,50,.35);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease}
+    .btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(61,184,50,.45)}
+    .btn-green:active{transform:translateY(0)}
+    #mobile-menu{max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease,opacity .3s ease}
+    #mobile-menu.open{max-height:500px;opacity:1}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.25,.46,.45,.94),transform .65s cubic-bezier(.25,.46,.45,.94)}
+    .reveal.in{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    .anim{animation:fadeUp .7s cubic-bezier(.25,.46,.45,.94) both;opacity:0}
+    .ad1{animation-delay:.1s}.ad2{animation-delay:.25s}.ad3{animation-delay:.42s}.ad4{animation-delay:.58s}
+    .faq-item .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+    .faq-item.open .faq-answer{max-height:500px}
+    .faq-item .faq-icon{transition:transform .3s ease}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-item.open{border-color:#3DB832}
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100" style="box-shadow:0 2px 24px rgba(0,0,0,.07);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-10 lg:h-12 w-auto" />
+        <div class="hidden sm:block">
+          <p class="font-heading font-bold text-sm lg:text-base leading-tight text-primary-darker">M.B. Therapy Center</p>
+          <p class="text-xs text-primary/70 leading-tight">From Disabilities to Possibilities</p>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="index.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Home</a>
+        <a href="about.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">About</a>
+        <a href="services.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Services</a>
+        <a href="team.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Our Team</a>
+        <a href="testimonials.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Testimonials</a>
+        <a href="faqs.html" class="nav-link active text-sm font-semibold text-primary-darker">FAQs</a>
+        <a href="contact.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="book.html" class="btn-lime hidden sm:inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Book Appointment
+        </a>
+        <button id="menu-toggle" aria-label="Toggle menu" class="lg:hidden flex flex-col gap-1.5 p-2">
+          <span class="w-5 h-0.5 bg-primary-darker rounded"></span>
+          <span class="w-5 h-0.5 bg-primary-darker rounded"></span>
+          <span class="w-5 h-0.5 bg-primary-darker rounded"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden border-t border-primary/10 py-3 space-y-1">
+      <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Home</a>
+      <a href="about.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">About</a>
+      <a href="services.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Services</a>
+      <a href="team.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Our Team</a>
+      <a href="testimonials.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Testimonials</a>
+      <a href="faqs.html" class="block px-3 py-2 text-sm font-semibold text-primary rounded-lg bg-primary/5">FAQs</a>
+      <a href="contact.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Contact</a>
+      <div class="pt-2 pb-1 px-3"><a href="book.html" class="btn-lime block text-center text-sm font-bold px-5 py-3 rounded-full">Book Appointment</a></div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="hero-grad relative pt-32 pb-20 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-lime/15 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-primary-darker/40 blur-3xl translate-y-1/3"></div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 text-white/70 text-xs mb-5">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      <span class="text-lime">FAQs</span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-heading font-bold text-white mb-5" style="letter-spacing:-.03em;">Frequently Asked Questions</h1>
+    <p class="text-white/80 text-lg max-w-2xl mx-auto" style="line-height:1.7;">Find answers to common questions about our services, scheduling, eligibility, and payments.</p>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 50L1440 50L1440 15C1200 40 960 50 720 40C480 30 240 8 0 15L0 50Z" fill="#fff"/></svg>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+    <!-- General -->
+    <div class="mb-12 reveal d1">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h2 class="text-xl font-heading font-bold text-primary-darker">General Questions</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">What is M.B. Therapy Center?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">M.B. Therapy Center is a multi-disciplinary therapy and special education center located in Taguig City. We provide individualized, evidence-based therapy services including Special Education, Occupational Therapy, Speech Therapy, Physical Therapy, and Tutorial Services to children and individuals with special needs and disabilities.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">What age groups do you serve?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">We serve individuals across a wide range of ages, from toddlers in early intervention programs to school-age children and teenagers. We also provide services for adults when appropriate. Early intervention is especially important and we welcome families as soon as a concern or diagnosis arises.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">Do I need a doctor's referral to enroll?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">A doctor's referral is not always required, but it is helpful. For some services, especially Physical Therapy and Occupational Therapy, a referral from a pediatrician or developmental pediatrician helps us understand your child's medical history and tailor the program accordingly. Feel free to contact us and we'll guide you through the process.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">Are your therapists licensed?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">Yes. All our therapists are fully licensed professionals in their respective fields — including Registered Occupational Therapists (OTR), Registered Physical Therapists (RPT), Registered Speech-Language Pathologists (RSLP), and Licensed Professional Teachers (LPT) with Special Education certification. We require all team members to maintain active licenses and pursue continuing education.</p></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="mb-12 reveal d2">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-lime flex items-center justify-center"><svg class="w-5 h-5 text-primary-darker" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+        <h2 class="text-xl font-heading font-bold text-primary-darker">About Our Services</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">How long is a typical therapy session?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">A typical individual therapy session lasts 45–60 minutes. Group sessions may run slightly longer. The frequency and duration of sessions vary depending on the type of therapy and the individual's needs and goals, as determined during the initial assessment.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">Can my child receive multiple therapies at once?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">Yes. Many of our patients benefit from receiving multiple therapies simultaneously — for example, SpED with Speech Therapy, or OT with Physical Therapy. Our multi-disciplinary team collaborates closely to ensure all therapies work together in a coordinated, complementary approach tailored to your child's goals.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">What conditions do you treat?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">We work with individuals with a wide range of conditions including Autism Spectrum Disorder (ASD), Down Syndrome, Cerebral Palsy, ADHD/ADD, Intellectual Disabilities, Learning Disabilities (dyslexia, dyscalculia), Global Developmental Delay, Language and Speech Delays, Sensory Processing Disorders, and more. If you're unsure whether your child's condition is within our scope, please contact us — we're happy to discuss.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">How do I know which service is right for my child?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">Contact us for a free consultation. Our team will discuss your child's challenges and goals and recommend the most appropriate services. For definitive recommendations, we conduct a comprehensive initial assessment to fully understand your child's strengths and areas for growth before designing a therapy plan.</p></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scheduling -->
+    <div class="mb-12 reveal d1">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+        <h2 class="text-xl font-heading font-bold text-primary-darker">Scheduling & Appointments</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">What are your operating hours?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">We are open Monday through Saturday, 8:00 AM to 5:00 PM. We are closed on Sundays and Philippine public holidays. For urgent inquiries outside office hours, you may send us a message on Facebook or email us and we will respond the next business day.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">How do I book an appointment?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">You can book an appointment by: (1) filling out our online booking form on this website, (2) calling us at (02) 8511-7239 or 0933-720-2394, or (3) sending us a message on our Facebook page. We will confirm your appointment and send you the details for your first visit.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">What should I bring on the first visit?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">Please bring: valid government ID of the parent/guardian, the child's birth certificate, any medical or psychological evaluation reports you may have, any previous therapy records or IEPs (Individualized Education Programs), doctor's referral (if available), and any other relevant medical history documents. Having these documents helps us create the most effective therapy plan from the start.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">Can I reschedule or cancel an appointment?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">Yes, you may reschedule or cancel appointments. We ask that you inform us at least 24 hours in advance so that we can accommodate other patients in need. Repeated late cancellations or no-shows may affect your scheduling priority. Please call us or send a message at the contact information provided.</p></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Payments -->
+    <div class="mb-12 reveal d2">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-lime flex items-center justify-center"><svg class="w-5 h-5 text-primary-darker" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+        <h2 class="text-xl font-heading font-bold text-primary-darker">Payments & Fees</h2>
+      </div>
+      <div class="space-y-3">
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">What are the fees for therapy sessions?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">Session fees vary depending on the type of therapy, session duration, and whether it is a one-on-one or group session. Please contact us directly for a current fee schedule. We strive to keep our services as accessible and affordable as possible for families.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">What payment methods are accepted?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">We accept cash payments at our center. We also accept bank transfers and GCash payments. Please ask our staff for our payment details when you book your appointment or arrive for your session. Receipts are issued for all payments.</p></div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border-2 border-transparent overflow-hidden" style="box-shadow:0 2px 12px rgba(61,184,50,.06);">
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-primary-darker text-sm pr-4">Do you accept PhilHealth or HMO coverage?</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-slate-600 text-sm pb-5" style="line-height:1.7;">Please contact us directly to inquire about PhilHealth and HMO coverage, as this may vary depending on the specific service and coverage plan. We are happy to provide any documentation needed to support a claim with your insurance provider.</p></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Still have questions -->
+    <div class="bg-primary-darker rounded-3xl p-8 text-center reveal d1">
+      <h3 class="font-heading font-bold text-xl text-white mb-3">Still have questions?</h3>
+      <p class="text-white/70 text-sm mb-6" style="line-height:1.7;">Our team is happy to help. Reach out to us directly and we'll get back to you as soon as possible.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="inline-flex items-center gap-2 bg-white text-primary-darker font-bold px-6 py-3 rounded-full text-sm hover:bg-lime transition-colors">Contact Us</a>
+        <a href="tel:+6328511 7239" class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 transition-colors text-white font-semibold px-6 py-3 rounded-full text-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Call Us
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-primary-darker text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4"><img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-12 w-auto brightness-110" /></div>
+        <p class="text-white/70 text-sm mb-5" style="line-height:1.7;">Dedicated to helping individuals with disabilities achieve their fullest potential through compassionate, evidence-based therapy.</p>
+        <a href="https://www.facebook.com/MBTherapyCenter" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div>
+        <h4 class="font-heading font-bold text-white mb-5">Quick Links</h4>
+        <ul class="space-y-2.5">
+          <li><a href="index.html" class="text-white/70 hover:text-lime text-sm transition-colors">Home</a></li>
+          <li><a href="about.html" class="text-white/70 hover:text-lime text-sm transition-colors">About Us</a></li>
+          <li><a href="services.html" class="text-white/70 hover:text-lime text-sm transition-colors">Our Services</a></li>
+          <li><a href="team.html" class="text-white/70 hover:text-lime text-sm transition-colors">Our Team</a></li>
+          <li><a href="testimonials.html" class="text-white/70 hover:text-lime text-sm transition-colors">Testimonials</a></li>
+          <li><a href="faqs.html" class="text-white/70 hover:text-lime text-sm transition-colors">FAQs</a></li>
+          <li><a href="book.html" class="text-white/70 hover:text-lime text-sm transition-colors">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading font-bold text-white mb-5">Our Services</h4>
+        <ul class="space-y-2.5">
+          <li><a href="services.html#sped" class="text-white/70 hover:text-lime text-sm transition-colors">Special Education</a></li>
+          <li><a href="services.html#ot" class="text-white/70 hover:text-lime text-sm transition-colors">Occupational Therapy</a></li>
+          <li><a href="services.html#st" class="text-white/70 hover:text-lime text-sm transition-colors">Speech Therapy</a></li>
+          <li><a href="services.html#pt" class="text-white/70 hover:text-lime text-sm transition-colors">Physical Therapy</a></li>
+          <li><a href="services.html#tutorial" class="text-white/70 hover:text-lime text-sm transition-colors">Tutorial Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading font-bold text-white mb-5">Contact Us</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-white/70"><svg class="w-4 h-4 text-lime mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>54 President Quirino St., Zone 6, South Signal Village, Taguig City</span></li>
+          <li class="flex items-start gap-3 text-sm text-white/70"><svg class="w-4 h-4 text-lime mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><span>(02) 8511-7239 / (02) 8697-6826</span></li>
+          <li class="flex items-start gap-3 text-sm text-white/70"><svg class="w-4 h-4 text-lime mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Mon–Sat: 8:00 AM – 5:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <p class="text-white/50 text-xs">© 2025 M.B. Therapy Center. All rights reserved.</p>
+      <p class="text-white/50 text-xs">54 President Quirino St., Taguig City, Philippines</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} }), { threshold:0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
+</body>
+</html>

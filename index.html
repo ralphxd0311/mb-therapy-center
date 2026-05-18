@@ -46,12 +46,12 @@
     .btn-green:active { transform:translateY(0); }
     .btn-white:active { transform:translateY(0); }
     .card-hover { transition:transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
-    .card-hover:hover { transform:translateY(-6px); box-shadow:0 20px 48px rgba(61,184,50,.18); }
+    .card-hover:hover { transform:translateY(-6px); box-shadow:-3px 0 0 0 #C5E000, 0 20px 48px rgba(61,184,50,.18); }
     #mobile-menu { max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .25s ease; }
     #mobile-menu.open { max-height:520px; opacity:1; }
     /* Scroll reveal */
-    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
-    .reveal.in { opacity:1; transform:translateY(0); }
+    .reveal { opacity:0; transform:translateY(28px) scale(0.97); transition:opacity .7s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.34,1.56,.64,1); }
+    .reveal.in { opacity:1; transform:translateY(0) scale(1); }
     .d1 { transition-delay:.08s } .d2 { transition-delay:.16s } .d3 { transition-delay:.24s }
     .d4 { transition-delay:.32s } .d5 { transition-delay:.40s } .d6 { transition-delay:.48s }
     /* Hero load animations */
@@ -62,6 +62,15 @@
     .svc-card { border:1px solid #e8f0e5; }
     .svc-card:hover .svc-arrow { transform:translateX(4px); }
     .svc-arrow { transition:transform .2s ease; }
+    /* Marquee */
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .marquee-track { display:flex; width:max-content; animation:ticker 38s linear infinite; will-change:transform; }
+    .marquee-wrap:hover .marquee-track { animation-play-state:paused; }
+    /* Nav scroll state */
+    nav.nav-scrolled { background:rgba(255,255,255,.96) !important; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
+    /* Floating CTA */
+    #float-cta { position:fixed; bottom:24px; right:20px; z-index:49; opacity:0; transform:translateY(16px) scale(0.85); transition:opacity .3s ease, transform .4s cubic-bezier(.34,1.56,.64,1); pointer-events:none; }
+    #float-cta.visible { opacity:1; transform:translateY(0) scale(1); pointer-events:auto; }
   </style>
 </head>
 <body class="antialiased">
@@ -81,8 +90,6 @@
         <a href="index.html" class="nav-link active text-sm font-semibold text-primary-darker">Home</a>
         <a href="about.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">About</a>
         <a href="services.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Services</a>
-        <a href="team.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Our Team</a>
-        <a href="testimonials.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Testimonials</a>
         <a href="faqs.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">FAQs</a>
         <a href="contact.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Contact</a>
       </div>
@@ -105,8 +112,6 @@
       <a href="index.html" class="block px-3 py-2.5 text-sm font-semibold text-primary-darker rounded-lg bg-primary/5">Home</a>
       <a href="about.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">About</a>
       <a href="services.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Services</a>
-      <a href="team.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Our Team</a>
-      <a href="testimonials.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Testimonials</a>
       <a href="faqs.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">FAQs</a>
       <a href="contact.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Contact</a>
       <div class="pt-2 pb-1 px-3"><a href="book.html" class="btn-lime block text-center text-sm font-bold px-5 py-3 rounded-full">Book Appointment</a></div>
@@ -143,17 +148,17 @@
             Our Services <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
         </div>
-        <div class="anim ad4 grid grid-cols-3 gap-3 mt-12">
+        <div class="anim ad4 stat-grid grid grid-cols-3 gap-3 mt-12">
           <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
-            <p class="text-2xl font-heading font-bold text-white">5+</p>
+            <p class="text-3xl font-heading font-bold text-white" data-count="5" data-suffix="+">5+</p>
             <p class="text-xs text-white/70 mt-1 font-body leading-tight">Services Offered</p>
           </div>
           <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
-            <p class="text-2xl font-heading font-bold text-white">500+</p>
+            <p class="text-3xl font-heading font-bold text-white" data-count="500" data-suffix="+">500+</p>
             <p class="text-xs text-white/70 mt-1 font-body leading-tight">Patients Served</p>
           </div>
           <div class="rounded-2xl p-4 text-center" style="background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);">
-            <p class="text-2xl font-heading font-bold text-white">10+</p>
+            <p class="text-3xl font-heading font-bold text-white" data-count="10" data-suffix="+">10+</p>
             <p class="text-xs text-white/70 mt-1 font-body leading-tight">Expert Therapists</p>
           </div>
         </div>
@@ -176,6 +181,7 @@
     <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 70L1440 70L1440 24C1200 58 960 70 720 58C480 46 240 12 0 24L0 70Z" fill="#fff"/></svg>
   </div>
 </section>
+
 
 <!-- ABOUT SNIPPET -->
 <section class="py-20 lg:py-32 bg-white">
@@ -338,6 +344,48 @@
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="py-20 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="inline-flex items-center gap-3 mb-5">
+        <div class="w-8 h-0.5 bg-primary"></div>
+        <span class="text-primary text-xs font-bold uppercase tracking-widest">How It Works</span>
+        <div class="w-8 h-0.5 bg-primary"></div>
+      </div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-primary-darker mb-4" style="letter-spacing:-.02em;">Starting Your Therapy Journey</h2>
+      <p class="text-slate-500 max-w-xl mx-auto leading-relaxed">Four simple steps from your first inquiry to your personalized therapy plan.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center reveal d1">
+        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-5"><span class="text-2xl font-heading font-bold text-white">1</span></div>
+        <h3 class="font-heading font-bold text-primary-darker mb-2">Initial Inquiry</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Contact us by phone, email, or our online form. We'll answer your questions and help find the right service.</p>
+      </div>
+      <div class="text-center reveal d2">
+        <div class="w-16 h-16 rounded-2xl bg-lime flex items-center justify-center mx-auto mb-5"><span class="text-2xl font-heading font-bold text-primary-darker">2</span></div>
+        <h3 class="font-heading font-bold text-primary-darker mb-2">Assessment</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">A comprehensive evaluation by our specialist to understand strengths, challenges, and goals.</p>
+      </div>
+      <div class="text-center reveal d3">
+        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-5"><span class="text-2xl font-heading font-bold text-white">3</span></div>
+        <h3 class="font-heading font-bold text-primary-darker mb-2">Therapy Plan</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">We design a customized therapy plan with clear objectives, timelines, and measurable goals.</p>
+      </div>
+      <div class="text-center reveal d4">
+        <div class="w-16 h-16 rounded-2xl bg-lime flex items-center justify-center mx-auto mb-5"><span class="text-2xl font-heading font-bold text-primary-darker">4</span></div>
+        <h3 class="font-heading font-bold text-primary-darker mb-2">Progress & Growth</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Regular sessions, progress monitoring, and family updates to celebrate every milestone.</p>
+      </div>
+    </div>
+    <div class="text-center mt-10 reveal d5">
+      <a href="book.html" class="btn-green inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full text-sm">
+        Book Your First Session <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS TEASER -->
 <section class="py-20 lg:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -449,6 +497,7 @@
       <div>
         <div class="flex items-center gap-3 mb-4">
           <img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-12 w-auto brightness-110" />
+          <div><p class="font-heading font-bold text-white text-sm leading-tight">M.B. Therapy Center</p><p class="text-white/50 text-xs leading-tight">From Disabilities to Possibilities</p></div>
         </div>
         <p class="text-white/65 text-sm mb-5 leading-relaxed">Dedicated to helping individuals with disabilities achieve their fullest potential through compassionate, evidence-based therapy.</p>
         <a href="https://www.facebook.com/MBTherapyCenter" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors items-center justify-center">
@@ -508,6 +557,12 @@
   </div>
 </footer>
 
+<!-- FLOATING BOOK CTA -->
+<a id="float-cta" href="book.html" class="btn-lime flex items-center gap-2 font-bold px-5 py-3 rounded-full text-sm" style="box-shadow:0 8px 28px rgba(197,224,0,.6);">
+  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+  Book Now
+</a>
+
 <script>
   document.getElementById('menu-toggle').addEventListener('click', () => {
     document.getElementById('mobile-menu').classList.toggle('open');
@@ -516,6 +571,42 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Nav scroll + floating CTA
+  const nav = document.querySelector('nav');
+  const floatCta = document.getElementById('float-cta');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('nav-scrolled', y > 60);
+    floatCta.classList.toggle('visible', y > 500);
+  }, { passive: true });
+
+  // Count-up animation for stats
+  function animateCount(el) {
+    const target = parseInt(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min((now - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(ease * target) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statGrid = document.querySelector('.stat-grid');
+  if (statGrid) {
+    const countObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('[data-count]').forEach(animateCount);
+          countObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    countObs.observe(statGrid);
+  }
 </script>
 </body>
 </html>

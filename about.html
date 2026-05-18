@@ -34,14 +34,19 @@
     #mobile-menu.open{max-height:520px;opacity:1}
     .value-card:hover .value-icon{transform:scale(1.08);transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
     .value-icon{transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.25,.46,.45,.94),transform .65s cubic-bezier(.25,.46,.45,.94)}
-    .reveal.in{opacity:1;transform:translateY(0)}
+    .reveal{opacity:0;transform:translateY(28px) scale(0.97);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.34,1.56,.64,1)}
+    .reveal.in{opacity:1;transform:translateY(0) scale(1)}
     .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.40s}.d6{transition-delay:.48s}
 .btn-outline{border:2px solid #3DB832;color:#2A9228;transition:background .2s cubic-bezier(.34,1.56,.64,1),color .2s ease,transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease}
 .btn-outline:hover{background:#3DB832;color:#fff;transform:translateY(-2px);box-shadow:0 6px 24px rgba(61,184,50,.3)}
 .btn-outline:active{transform:translateY(0)}
     .btn-lime:active{transform:translateY(0)}
     .btn-green:active{transform:translateY(0)}
+    .team-card{transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease}
+    .team-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(61,184,50,.15)}
+    nav.nav-scrolled{background:rgba(255,255,255,.96) !important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    #float-cta{position:fixed;bottom:24px;right:20px;z-index:49;opacity:0;transform:translateY(16px) scale(0.85);transition:opacity .3s ease,transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+    #float-cta.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
   </style>
 </head>
 <body class="antialiased">
@@ -61,8 +66,6 @@
         <a href="index.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Home</a>
         <a href="about.html" class="nav-link active text-sm font-semibold text-primary-darker">About</a>
         <a href="services.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Services</a>
-        <a href="team.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Our Team</a>
-        <a href="testimonials.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Testimonials</a>
         <a href="faqs.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">FAQs</a>
         <a href="contact.html" class="nav-link text-sm font-semibold text-slate-500 hover:text-primary-darker transition-colors">Contact</a>
       </div>
@@ -85,8 +88,6 @@
       <a href="index.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Home</a>
       <a href="about.html" class="block px-3 py-2.5 text-sm font-semibold text-primary-darker rounded-lg bg-primary/5">About</a>
       <a href="services.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Services</a>
-      <a href="team.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Our Team</a>
-      <a href="testimonials.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Testimonials</a>
       <a href="faqs.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">FAQs</a>
       <a href="contact.html" class="block px-3 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 rounded-lg">Contact</a>
       <div class="pt-2 pb-1 px-3"><a href="book.html" class="btn-lime block text-center text-sm font-bold px-5 py-3 rounded-full">Book Appointment</a></div>
@@ -107,7 +108,12 @@
       <span class="text-lime">About Us</span>
     </div>
     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-5" style="letter-spacing:-.03em;">About M.B. Therapy Center</h1>
-    <p class="text-white/80 text-lg max-w-2xl mx-auto" style="line-height:1.7;">Learn about our story, our mission, and the values that guide everything we do for our patients and families.</p>
+    <p class="text-white/80 text-lg max-w-2xl mx-auto mb-6" style="line-height:1.7;">Learn about our story, our mission, and the values that guide everything we do for our patients and families.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="inline-flex items-center gap-2 bg-lime/20 border border-lime/30 text-lime text-sm font-bold px-4 py-2 rounded-full">✦ 10+ Years in Service</span>
+      <span class="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full">500+ Families Served</span>
+      <span class="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-sm font-semibold px-4 py-2 rounded-full">Taguig City, Philippines</span>
+    </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0">
     <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 50L1440 50L1440 15C1200 40 960 50 720 40C480 30 240 8 0 15L0 50Z" fill="#fff"/></svg>
@@ -115,7 +121,7 @@
 </section>
 
 <!-- MISSION & VISION -->
-<section class="py-20 lg:py-28 bg-white">
+<section class="py-20 lg:py-28" style="background:#F5FBF0;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-8 mb-20">
       <div class="bg-white rounded-3xl p-8 lg:p-10 reveal" style="box-shadow:0 4px 24px rgba(61,184,50,.1);">
@@ -246,14 +252,79 @@
   </div>
 </section>
 
+<!-- MEET THE TEAM -->
+<section id="team" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="inline-flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest mb-4"><div class="w-8 h-0.5 bg-primary"></div>Our Team<div class="w-8 h-0.5 bg-primary"></div></div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-primary-darker mb-4" style="letter-spacing:-.02em;">Meet the People Behind the Care</h2>
+      <p class="text-slate-500 max-w-xl mx-auto" style="line-height:1.7;">Licensed professionals committed to helping every individual reach their fullest potential.</p>
+    </div>
+    <!-- Leadership -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+      <div class="team-card bg-white rounded-3xl overflow-hidden reveal" style="box-shadow:0 4px 24px rgba(61,184,50,.1);border:1px solid #e8f0e5;">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1612872513575-7e7666b96ff3?w=400&h=280&q=80&fit=crop&auto=format" alt="Maridel Bendicio" class="w-full h-52 object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-darker/60 to-transparent mix-blend-multiply"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-lime text-primary-darker text-xs font-bold px-3 py-1.5 rounded-full">Center Director</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading font-bold text-xl text-primary-darker mb-1">Maridel Bendicio</h3>
+          <p class="text-primary text-sm font-semibold mb-3">Founder & Center Director</p>
+          <p class="text-slate-500 text-sm" style="line-height:1.7;">Founder of M.B. Therapy Center with over a decade of experience in special education and therapy management. Her vision: accessible, inclusive therapy for every family in Taguig City.</p>
+        </div>
+      </div>
+      <div class="team-card bg-white rounded-3xl overflow-hidden reveal d1" style="box-shadow:0 4px 24px rgba(61,184,50,.1);border:1px solid #e8f0e5;">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1734365294772-2f59212083d3?w=400&h=280&q=80&fit=crop&auto=format" alt="Madel Bautista" class="w-full h-52 object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-darker/60 to-transparent mix-blend-multiply"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-lime text-primary-darker text-xs font-bold px-3 py-1.5 rounded-full">Co-Director</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading font-bold text-xl text-primary-darker mb-1">Madel Bautista</h3>
+          <p class="text-primary text-sm font-semibold mb-3">Co-Director & Clinical Head</p>
+          <p class="text-slate-500 text-sm" style="line-height:1.7;">Clinical head overseeing therapy quality and care standards. Her background in occupational therapy ensures evidence-based practice guides every patient's treatment plan.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Specialists -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-white rounded-2xl p-5 flex items-center gap-4 reveal" style="box-shadow:0 2px 12px rgba(61,184,50,.08);border:1px solid #e8f0e5;">
+        <img src="https://images.unsplash.com/photo-1621255612554-440c5e7b21b3?w=80&h=80&q=80&fit=crop&auto=format" alt="Ana Santos" class="w-16 h-16 rounded-2xl object-cover flex-shrink-0" />
+        <div><h4 class="font-heading font-bold text-primary-darker">Ana Santos, LPT</h4><p class="text-primary text-xs font-semibold">Special Education Teacher</p><span class="mt-1.5 inline-block bg-primary/10 text-primary-darker text-xs px-2.5 py-0.5 rounded-full font-medium">SpED</span></div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 flex items-center gap-4 reveal d1" style="box-shadow:0 2px 12px rgba(61,184,50,.08);border:1px solid #e8f0e5;">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=80&h=80&q=80&fit=crop&auto=format" alt="Dr. Carlo Reyes" class="w-16 h-16 rounded-2xl object-cover flex-shrink-0" />
+        <div><h4 class="font-heading font-bold text-primary-darker">Dr. Carlo Reyes, OTR</h4><p class="text-primary text-xs font-semibold">Occupational Therapist</p><span class="mt-1.5 inline-block bg-lime/30 text-primary-darker text-xs px-2.5 py-0.5 rounded-full font-medium">OT</span></div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 flex items-center gap-4 reveal d2" style="box-shadow:0 2px 12px rgba(61,184,50,.08);border:1px solid #e8f0e5;">
+        <img src="https://images.unsplash.com/photo-1734365294861-3f6df6a6af89?w=80&h=80&q=80&fit=crop&auto=format" alt="Maria Cruz" class="w-16 h-16 rounded-2xl object-cover flex-shrink-0" />
+        <div><h4 class="font-heading font-bold text-primary-darker">Maria Cruz, RSLP</h4><p class="text-primary text-xs font-semibold">Speech-Language Pathologist</p><span class="mt-1.5 inline-block bg-primary/10 text-primary-darker text-xs px-2.5 py-0.5 rounded-full font-medium">ST</span></div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 flex items-center gap-4 reveal d3" style="box-shadow:0 2px 12px rgba(61,184,50,.08);border:1px solid #e8f0e5;">
+        <img src="https://images.unsplash.com/photo-1612636322033-f48f76c34bab?w=80&h=80&q=80&fit=crop&auto=format" alt="Jose Dela Cruz" class="w-16 h-16 rounded-2xl object-cover flex-shrink-0" />
+        <div><h4 class="font-heading font-bold text-primary-darker">Jose Dela Cruz, RPT</h4><p class="text-primary text-xs font-semibold">Physical Therapist</p><span class="mt-1.5 inline-block bg-lime/30 text-primary-darker text-xs px-2.5 py-0.5 rounded-full font-medium">PT</span></div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 flex items-center gap-4 reveal d4" style="box-shadow:0 2px 12px rgba(61,184,50,.08);border:1px solid #e8f0e5;">
+        <img src="https://images.unsplash.com/photo-1612872513575-7e7666b96ff3?w=80&h=80&q=80&fit=crop&auto=format" alt="Liza Villanueva" class="w-16 h-16 rounded-2xl object-cover flex-shrink-0" />
+        <div><h4 class="font-heading font-bold text-primary-darker">Liza Villanueva, LPT</h4><p class="text-primary text-xs font-semibold">Special Education Teacher</p><span class="mt-1.5 inline-block bg-primary/10 text-primary-darker text-xs px-2.5 py-0.5 rounded-full font-medium">SpED</span></div>
+      </div>
+      <div class="bg-white rounded-2xl p-5 flex items-center gap-4 reveal d5" style="box-shadow:0 2px 12px rgba(61,184,50,.08);border:1px solid #e8f0e5;">
+        <img src="https://images.unsplash.com/photo-1659353885824-1199aeeebfc6?w=80&h=80&q=80&fit=crop&auto=format" alt="Mark Gonzales" class="w-16 h-16 rounded-2xl object-cover flex-shrink-0" />
+        <div><h4 class="font-heading font-bold text-primary-darker">Mark Gonzales, LPT</h4><p class="text-primary text-xs font-semibold">Tutorial & Academic Specialist</p><span class="mt-1.5 inline-block bg-lime/30 text-primary-darker text-xs px-2.5 py-0.5 rounded-full font-medium">Tutorial</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
-<section class="py-16 bg-white">
+<section class="py-16" style="background:#F5FBF0;">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
     <h2 class="text-2xl lg:text-3xl font-heading font-bold text-primary-darker mb-4" style="letter-spacing:-.02em;">Ready to Take the First Step?</h2>
     <p class="text-slate-600 mb-8" style="line-height:1.7;">Meet our team, explore our services, or book an appointment today. We're here to help every step of the way.</p>
     <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
       <a href="book.html" class="btn-green inline-flex items-center justify-center gap-2 text-white font-bold px-7 py-3.5 rounded-full text-sm w-full sm:w-auto">Book Appointment <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
-      <a href="team.html" class="btn-outline inline-flex items-center justify-center gap-2 font-bold px-7 py-3.5 rounded-full text-sm w-full sm:w-auto">Meet Our Team <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
+      <a href="services.html" class="btn-outline inline-flex items-center justify-center gap-2 font-bold px-7 py-3.5 rounded-full text-sm w-full sm:w-auto">Explore Services <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -263,7 +334,10 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
       <div>
-        <div class="flex items-center gap-3 mb-4"><img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-12 w-auto brightness-110" /></div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-12 w-auto brightness-110" />
+          <div><p class="font-heading font-bold text-white text-sm leading-tight">M.B. Therapy Center</p><p class="text-white/50 text-xs leading-tight">From Disabilities to Possibilities</p></div>
+        </div>
         <p class="text-white/70 text-sm mb-5" style="line-height:1.7;">Dedicated to helping individuals with disabilities achieve their fullest potential through compassionate, evidence-based therapy.</p>
         <a href="https://www.facebook.com/MBTherapyCenter" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 items-center justify-center transition-colors">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -309,12 +383,23 @@
   </div>
 </footer>
 
+<a id="float-cta" href="book.html" class="btn-lime flex items-center gap-2 font-bold px-5 py-3 rounded-full text-sm" style="box-shadow:0 8px 28px rgba(197,224,0,.6);">
+  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+  Book Now
+</a>
 <script>
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} }), { threshold:0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const nav = document.querySelector('nav');
+  const floatCta = document.getElementById('float-cta');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('nav-scrolled', y > 60);
+    floatCta.classList.toggle('visible', y > 400);
+  }, { passive: true });
   const countIO = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;

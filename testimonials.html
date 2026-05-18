@@ -34,9 +34,12 @@
     #mobile-menu.open{max-height:520px;opacity:1}
     .tcard{transition:transform .2s ease,box-shadow .2s ease;border:1px solid #e8f0e5}
     .tcard:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(61,184,50,.13)}
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.25,.46,.45,.94),transform .65s cubic-bezier(.25,.46,.45,.94)}
-    .reveal.in{opacity:1;transform:translateY(0)}
+    .reveal{opacity:0;transform:translateY(28px) scale(0.97);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.34,1.56,.64,1)}
+    .reveal.in{opacity:1;transform:translateY(0) scale(1)}
     .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.40s}.d6{transition-delay:.48s}
+    nav.nav-scrolled{background:rgba(255,255,255,.96) !important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    #float-cta{position:fixed;bottom:24px;right:20px;z-index:49;opacity:0;transform:translateY(16px) scale(0.85);transition:opacity .3s ease,transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+    #float-cta.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
   </style>
 </head>
 <body class="antialiased">
@@ -56,8 +59,6 @@
         <a href="index.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Home</a>
         <a href="about.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">About</a>
         <a href="services.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Services</a>
-        <a href="team.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Our Team</a>
-        <a href="testimonials.html" class="nav-link active text-sm font-semibold text-primary-darker">Testimonials</a>
         <a href="faqs.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">FAQs</a>
         <a href="contact.html" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary-darker">Contact</a>
       </div>
@@ -77,8 +78,6 @@
       <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Home</a>
       <a href="about.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">About</a>
       <a href="services.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Services</a>
-      <a href="team.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Our Team</a>
-      <a href="testimonials.html" class="block px-3 py-2 text-sm font-semibold text-primary rounded-lg bg-primary/5">Testimonials</a>
       <a href="faqs.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">FAQs</a>
       <a href="contact.html" class="block px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-primary/5 rounded-lg">Contact</a>
       <div class="pt-2 pb-1 px-3"><a href="book.html" class="btn-green block text-center text-white text-sm font-bold px-5 py-2.5 rounded-full">Book Appointment</a></div>
@@ -116,10 +115,9 @@
   <div class="absolute bottom-0 left-0 right-0">
     <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 50L1440 50L1440 15C1200 40 960 50 720 40C480 30 240 8 0 15L0 50Z" fill="#F5FBF0"/></svg>
   </div>
-</section>
 
 <!-- FEATURED TESTIMONIAL -->
-<section class="py-20 bg-white">
+<section class="py-20" style="background:#F5FBF0;">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <div class="bg-primary-darker rounded-3xl p-10 lg:p-14 relative overflow-hidden" style="box-shadow:0 20px 60px rgba(30,107,28,.3);">
       <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-lime/10 blur-3xl -translate-y-1/2 translate-x-1/3"></div>
@@ -144,7 +142,7 @@
 </section>
 
 <!-- TESTIMONIALS GRID -->
-<section class="py-8 pb-24 bg-white">
+<section class="py-8 pb-24 bg-white" style="background:#fff;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -227,7 +225,10 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
       <div>
-        <div class="flex items-center gap-3 mb-4"><img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-12 w-auto brightness-110" /></div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="brand_assets/mbtc_logo_enhanced.png" alt="M.B. Therapy Center" class="h-12 w-auto brightness-110" />
+          <div><p class="font-heading font-bold text-white text-sm leading-tight">M.B. Therapy Center</p><p class="text-white/50 text-xs leading-tight">From Disabilities to Possibilities</p></div>
+        </div>
         <p class="text-white/70 text-sm mb-5" style="line-height:1.7;">Dedicated to helping individuals with disabilities achieve their fullest potential through compassionate, evidence-based therapy.</p>
         <a href="https://www.facebook.com/MBTherapyCenter" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 items-center justify-center transition-colors">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -273,10 +274,23 @@
   </div>
 </footer>
 
+<a id="float-cta" href="book.html" class="btn-lime flex items-center gap-2 font-bold px-5 py-3 rounded-full text-sm" style="box-shadow:0 8px 28px rgba(197,224,0,.6);">
+  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+  Book Now
+</a>
 <script>
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} }), { threshold:0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const nav = document.querySelector('nav');
+  const floatCta = document.getElementById('float-cta');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('nav-scrolled', y > 60);
+    floatCta.classList.toggle('visible', y > 400);
+  }, { passive: true });
 </script>
 </body>
 </html>
